@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="SFTP Client Suite" verbose="1">
+    <parameter name="clientJar" value="sftp-client-0.1-jar-with-dependencies.jar"/>
+    <parameter name="host" value="127.0.0.1"/>
+    <parameter name="port" value="22"/>
+    <parameter name="user" value="user"/>
+    <parameter name="password" value="pass"/>
+    <parameter name="remoteFile" value="domains.json"/>
+
+    <test name="Unit">
+        <classes>
+            <class name="IpValidationTest"/>
+            <class name="DomainManagerTest"/>
+        </classes>
+    </test>
+
+    <test name="Integration">
+        <classes>
+            <class name="SftpIntegrationTest"/>
+        </classes>
+    </test>
+
+    <test name="CLI E2E">
+        <classes>
+            <class name="CliE2eTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,20 @@
+#!/usr/bin/expect -f
+set timeout 15
+spawn java -jar sftp-client-0.1-jar-with-dependencies.jar
+expect "Enter the host: "
+send "127.0.0.1\r"
+expect "Enter the port: "
+send "22\r"
+expect "Enter your username: "
+send "mkuser\r"
+expect "Enter your password: "
+send "mkuser\r"
+expect "Your choice:"
+send "1\r"
+expect {
+  -re ".*->.*" { send_user "\nFound a pair line\n" }
+  timeout { exit 1 }
+}
+expect "Your choice:"
+send "6\r"
+expect eof
