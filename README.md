@@ -24,6 +24,7 @@
 mvn clean package
 ```
 При сборке будет создан файл target/sftp-client-tests-0.1-jar-with-dependencies.jar. В него включены все тестовые классы и необходимые зависимости.
+
 3. Положите в одну директорию файлы sftp-client-tests-0.1-jar-with-dependencies.jar, sftp-client-0.1-jar-with-dependencies.jar и testng.xml.
 
 ## Запуск тестов
